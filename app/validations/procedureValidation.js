@@ -14,7 +14,7 @@ exports.validateProcedure = (req, res, next) => {
     errors.category = errMessage("required", "Kategorija");
   } else if (category.length < 2) {
     errors.category = errMessage("min_symbols", "Kategorija", 2);
-  } else if (category.length > 20) {
+  } else if (category.length > 30) {
     errors.category = errMessage("max_symbols", "Kategorija", 20);
   }
 

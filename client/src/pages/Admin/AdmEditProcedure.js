@@ -5,13 +5,11 @@ import ProcedureCSS from "../Procedure/Procedure.module.css";
 import axios from "../../axios";
 import { useLocation } from "react-router-dom";
 import { AiFillWarning } from "react-icons/ai";
-import { BsFillPatchQuestionFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import BeatLoader from "react-spinners/BeatLoader";
 import { procedureValidation } from "../../func.js";
 import { useFormik } from "formik";
 import AdminCSS from "./Admin.module.css";
-import AdmNav from "./AdmNav";
 export default function AdmEditProcedure() {
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
@@ -120,7 +118,7 @@ export default function AdmEditProcedure() {
                       type="text"
                       id="title"
                       name="title"
-                      placeholder="Procedureo pavadinimas"
+                      placeholder="Procedūros pavadinimas"
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       value={formik.values.title}
@@ -129,6 +127,32 @@ export default function AdmEditProcedure() {
                       <div className="error-mess-box">
                         <AiFillWarning className="error-mess-icon" />
                         <span>{formik.errors.title}</span>
+                      </div>
+                    ) : null}
+
+<p>
+                      <label className="text-color-second" htmlFor="category">
+                        Kategorija
+                      </label>
+                    </p>
+                    <input
+                      className={` ${
+                        formik.touched.category && formik.errors.category
+                          ? "error"
+                          : ""
+                      }`}
+                      type="text"
+                      id="category"
+                      name="category"
+                      placeholder="Kategorija"
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      value={formik.values.category}
+                    />
+                    {formik.touched.category && formik.errors.category ? (
+                      <div className="error-mess-box">
+                        <AiFillWarning className="error-mess-icon" />
+                        <span>{formik.errors.category}</span>
                       </div>
                     ) : null}
 
