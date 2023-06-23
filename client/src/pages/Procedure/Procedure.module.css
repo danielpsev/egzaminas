@@ -1,0 +1,128 @@
+.ProcedureCover {
+    position: relative;
+    width: 100%;
+    min-height: 50vh;
+    border-radius: 5px;
+    /* background-size: cover; */
+    /* background-image: url('https://www.scubadivermag.com/wp-content/uploads/2019/12/avatar-2-cover.jpg'); */
+    /* background-repeat: no-repeat; */
+    margin-top: 50px;
+    margin-bottom: 50px;
+    z-index: 1;
+    border: 1px solid var(--border-color);
+    background-color: rgba(23, 26, 32, 0.8);
+  }
+  /* .ProcedureCover__img {
+    width: 100%;
+    border-radius: 5px;
+  } */
+  
+  /* .ProcedureCover__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.05));
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  } */
+  .dateInput{
+    width: 100%;
+  }
+  .ProcedureContainer{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .ProcedureContainer__img{
+    width: 350px;
+    height: 450px;
+    object-fit: cover;
+    border: 1px solid var(--border-color);
+    background-color: var(--body-bg);
+  }
+  .ProcedureContainer__RightSideContainer{
+    color: #eee;
+    flex: 1;
+    padding: 15px 70px 15px 15px;
+    border-radius: 0px 5px 5px 0px;
+
+  }
+  .ProcedureTrailerContainer{
+    /* margin-top: 50px; */
+    width: 100%;
+    height: 700px;
+    border-top: 1px solid var(--border-color)
+  }
+  .ProcedureTrailerContainer iframe{
+    width: 100%;
+    height: 700px;
+  }
+
+  .ProcedureRightSideContainer__title{
+    font-size: 2.5em;
+    text-transform: uppercase;
+
+  }
+  .ProcedureRightSideContainer__description{
+    margin-top: 25px;
+    line-height: 25px;
+  }
+  .ProcedureRightSideContainer__detailsBox{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 10px;
+    line-height: 25px;
+  }
+  .ProcedureRightSideContainer__detailsBtn{
+    width: 200px;
+  }
+
+
+.RatingBox{
+  position: absolute;
+  left: -30px;
+  top: -30px;
+}
+.RatingBox__star{
+  font-size: 5em;
+  color: var(--acc-color);
+}
+.RatingBox__rate{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #eee;
+}
+.PosterBox{
+  position: relative;
+  margin: 0 auto;
+}
+  /* tablet */
+@media screen and (max-width: 1439px){
+  .ProcedureContainer__RightSideContainer{
+    min-width: 60%;
+  }
+}
+
+/* mobile */
+@media screen and (max-width: 767px){
+  .PosterBox{
+    width: 100%;
+  }
+  .ProcedureContainer__img{
+    width: 100%;
+  }
+  .ProcedureContainer__RightSideContainer{
+    padding: 15px;
+  }
+  .ProcedureRightSideContainer__detailsBtn{
+    margin-top: 25px;
+  }
+}
