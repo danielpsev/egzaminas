@@ -3,6 +3,7 @@ import axios from "../../axios";
 import AdmNav from "./AdmNav";
 import AdmAddProcedure from "./AdmAddProcedure";
 import AdmProceduresList from "./ProceduresList/AdmProceduresList";
+import AdmReservationsList from "./ReservationsList/AdmReservationsList";
 import { useNavigate, useLocation } from "react-router-dom";
 const Admin = () => {
   const [showPage, setShowPage] = useState("procedures_list");
@@ -16,7 +17,7 @@ const Admin = () => {
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
     const type = searchParams.get("type");
-    if (type == "procuderes_list" || type == "add_procedure") {
+    if (type == "procuderes_list" || type == "add_procedure" || type == "reservations_list") {
       setShowPage(type);
     }
   }, [location.search]);
@@ -25,6 +26,7 @@ const Admin = () => {
       <div className="wrapper">
         <AdmNav funcShowPage={funcShowPage} showPage={showPage} />
         {showPage == "procedures_list" ? <AdmProceduresList /> : null}
+        {showPage == "reservations_list" ? <AdmReservationsList /> : null}
         {showPage == "add_procedure" ? <AdmAddProcedure /> : null}
       </div>
     </main>

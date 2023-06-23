@@ -2,18 +2,17 @@ import React, { useEffect, useState } from "react";
 import axios from "../../axios";
 import { useAuth } from "../../context/Auth";
 import ProfileCSS from "./Profile.module.css";
-import FilmsList from "../Main/ProceduresList";
-import Pagination from "../../components/Pagination/Pagination";
+import Reservation from "./Reservation";
+import { v4 as uuidv4 } from "uuid";
 const Profile = () => {
   const auth = useAuth();
-  const [films, setFilms] = useState([]);
-  const [totalPages, setTotalPages] = useState(1);
-  const [currPage, setCurrPage] = useState(1);
+  const [reservations, setReservations] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const getLikedFilms = async (page) => {
+  const getReservations = async () => {
     try {
-      const res = await axios.get(`/films/like/123?page=${page}`);
-      setFilms(res.data.data.films);
+      const res = await axios.get(`/reservations/my/`);
+      console.log(res);
+      setReservations(res.data.data.reservations);
       setIsLoading(false);
       return res;
     } catch (err) {
@@ -22,26 +21,30 @@ const Profile = () => {
     }
   };
   useEffect(() => {
-    getLikedFilms(currPage);
-  }, [currPage]);
+    getReservations();
+  }, []);
+
+  let reservations_render = reservations.map((el) => {
+    return <Reservation obj={el} key={uuidv4()} />;
+  });
+
   return (
     <main>
       <div className="wrapper">
         <div className="main-inner">
           <h2 className={ProfileCSS.ProfileTitle}>
-            <span className="acc-color">{auth.user.username}</span> mėgstamiausių filmų sąrašas
+            <span className="acc-color">{auth.user.username}</span> rezervacijos
+
+          <div className="profile-reservations-container">
+            {!isLoading ? (
+          reservations.length > 0 ? (
+            reservations_render
+          ) : (
+            <p className="text-color-second">Nerasta.</p>
+          )
+        ) : null}
+        </div>
           </h2>
-          <FilmsList
-            getFilms={getLikedFilms}
-            films={films}
-            isLoading={isLoading}
-          />
-          <Pagination
-            totalPages={totalPages}
-            setTotalPages={setTotalPages}
-            currPage={currPage}
-            setCurrPage={setCurrPage}
-          />
         </div>
       </div>
     </main>

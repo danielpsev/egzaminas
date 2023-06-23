@@ -1,6 +1,6 @@
 import React from "react";
 import Procedure from "./Procedure";
-import MainCSS from "./Main.module.css";
+import style from "./Main.module.css";
 import { v4 as uuidv4 } from "uuid";
 import BeatLoader from "react-spinners/BeatLoader";
 export default function ProceduresList(props) {
@@ -21,7 +21,7 @@ export default function ProceduresList(props) {
         />
       ) : null}
 
-      <div className={MainCSS.FilmListContainer}>
+      <div className={style.ProcedureListContainer}>
         {!isLoading ? (
           procedures.length > 0 ? (
             procedures_render

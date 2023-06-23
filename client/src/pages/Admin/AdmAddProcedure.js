@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import axios from "../../axios";
 import AdminCSS from "./Admin.module.css";
 import { useFormik } from "formik";
 import { AiFillWarning } from "react-icons/ai";
-import { BsFillPatchQuestionFill } from "react-icons/bs";
 import { procedureValidation } from "../../func";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
@@ -37,15 +36,15 @@ const AdmAddProcedure = () => {
     validate,
   });
   return (
-    <div className={`${AdminCSS.addFilmInner} mh-50vh`}>
-      <div className={AdminCSS.addFilmContainer}>
-        <div className={AdminCSS.addFilmContent}>
-          <h3 className={`${AdminCSS.addFilm__title} text-color-second`}>
+    <div className={`${AdminCSS.addProcedureInner} mh-50vh`}>
+      <div className={AdminCSS.addProcedureContainer}>
+        <div className={AdminCSS.addProcedureContent}>
+          <h3 className={`${AdminCSS.addProcedure__title} text-color-second`}>
             Procedūros pridėjimas
           </h3>
           <form
             noValidate
-            className={AdminCSS.addFilmForm}
+            className={AdminCSS.addProcedureForm}
             onSubmit={formik.handleSubmit}
           >
             <p>
@@ -60,7 +59,7 @@ const AdmAddProcedure = () => {
               type="text"
               id="title"
               name="title"
-              placeholder="Filmo pavadinimas"
+              placeholder="Procedūros pavadinimas"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.title}
@@ -146,7 +145,7 @@ const AdmAddProcedure = () => {
 
             <button
               type="submit"
-              className={`${AdminCSS.addFilmBtn} btn btn-success float-right`}
+              className={`${AdminCSS.addProcedureBtn} btn btn-success float-right`}
             >
               Pridėti
             </button>

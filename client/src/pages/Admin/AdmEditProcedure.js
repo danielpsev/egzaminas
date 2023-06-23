@@ -90,11 +90,11 @@ export default function AdmEditProcedure() {
             ) : (
               <>
                 <div className={ProcedureCSS.ProcedureCover__overlay}></div>
-                <h3 className={`${AdminCSS.editFilmTitle} text-color-second`}>
+                <h3 className={`${AdminCSS.editProcedureTitle} text-color-second`}>
                   Procedūros redagavimas
                   <button
-                    className={`${AdminCSS.editFilmBackBtn} btn btn-type-2 btn-secondary`}
-                    onClick={() => navigate(`/admin/?type=films_list`)}
+                    className={`${AdminCSS.editProcedureBackBtn} btn btn-type-2 btn-secondary`}
+                    onClick={() => navigate(`/admin/?type=Procedures_list`)}
                     title="Atgal"
                   >
                     Atgal
@@ -103,12 +103,12 @@ export default function AdmEditProcedure() {
                 <section className={ProcedureCSS.ProcedureContainer}>
                   <form
                     noValidate
-                    className={AdminCSS.editFilmForm}
+                    className={AdminCSS.editProcedureForm}
                     onSubmit={formik.handleSubmit}
                   >
                     <p>
                       <label className="text-color-second" htmlFor="title">
-                        Filmo pavadinimas
+                        Procedūros pavadinimas
                       </label>
                     </p>
                     <input
@@ -120,7 +120,7 @@ export default function AdmEditProcedure() {
                       type="text"
                       id="title"
                       name="title"
-                      placeholder="Filmo pavadinimas"
+                      placeholder="Procedureo pavadinimas"
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       value={formik.values.title}
@@ -191,12 +191,12 @@ export default function AdmEditProcedure() {
                           : "../../../" + formik.values.imgSrc
                       }
                       width="100px"
-                      alt="filmo afiša"
+                      alt="nuotrauka"
                     />
                    
                     <button
                       type="submit"
-                      className={`${AdminCSS.editFilmSaveBtn} btn btn-success float-right mt-10`}
+                      className={`${AdminCSS.editProcedureSaveBtn} btn btn-success float-right mt-10`}
                     >
                       Išsaugoti
                     </button>

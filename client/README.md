@@ -1,20 +1,11 @@
-
-![Logo](https://i.imgur.com/DmV0Jyt.png)
-## KinoFlix
-
-KinoFlix - Geriausi filmai vienoje vietoje!
-
-
-
-
 ## Projekto instaliavimas ir paleidimas
 
 
 
 ```bash
 1. Atsisiunčiam repozitoriją ZIP formatu iš github arba naudodami bash įrankį.
-   git clone https://github.com/danielpsev/kinoflix.git
-   cd kinoflix
+   git clone git@github.com:danielpsev/egzaminas.git
+   cd egzaminas
 
 2. Atsidarom projektą per VS Code
    code .
@@ -28,37 +19,13 @@ KinoFlix - Geriausi filmai vienoje vietoje!
       cd app
       npm i
       npm start
+      
+***********
+Vartotojas
+    Slapyvardis: Vartotojas
+    Slaptažodis: 12345678
 
+Admin
+    Slapyvardis: Admin
+    Slaptažodis: 12345678
 ```
-
-
-
-## Galimybės
-
-Vartotojas (user)
-- Gali ieškoti filmus
-- Gali pridėti ir šalinti filmus iš išsaugotų filmų sąrašo
-
-Administratorius (admin)
-- Filmų pridėjimas / redagavimas / šalinimas
-
-
-
-
-## Galerija
-
-Filmai
-![App Screenshot](https://i.imgur.com/7tInrA1.png)
-Filmas
-![App Screenshot](https://i.imgur.com/4hnSNCc.png)
-
-#
-Admin. Filmų sąrašas
-![App Screenshot](https://i.imgur.com/C6UjWDl.png)
-Admin. Filmo Pridėjimas
-![App Screenshot](https://i.imgur.com/v0IT30N.png)
-Admin .Filmo Redagavimas
-![App Screenshot](https://i.imgur.com/yGa9zDm.jpg)
-
-
-

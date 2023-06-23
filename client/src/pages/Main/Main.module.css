@@ -5,7 +5,7 @@
 .MainTopContainer{
     /* margin-top: 20px; */
 }
-.FilmListContainer{
+.ProcedureListContainer{
     margin-top: 10px;
     /* display: flex; */
     /* flex-wrap: wrap; */
@@ -15,7 +15,7 @@
     /* grid-auto-rows: 200px; */
     grid-gap: 10px;
 }
-.MainFilmContainer{
+.MainProcedureContainer{
     position: relative;
     display: flex;
     flex-direction: column;
@@ -24,28 +24,28 @@
     border: 1px solid var(--border-color);
     background-color: var(--body-bg);
 }
-.MainFilmContainer__img{
+.MainProcedureContainer__img{
     width: 100%;
     object-fit: cover;
     height: 328px;
 }
-.MainFilmContainer__infoContainer{
+.MainProcedureContainer__infoContainer{
     position: relative;
     border-top: 1px solid var(--border-color);
     padding: 15px 30px 15px 15px;
 }
-.MainFilmContainer__infoContainer__title{
+.MainProcedureContainer__infoContainer__title{
     font-size: 1.2em;
     padding-right: 15px;
     color: var(--text-color__title);
 }
-.MainFilmContainer__infoContainer__details{
+.MainProcedureContainer__infoContainer__details{
     margin-top: 10px;
     color: var(--text-color__second);
     font-size: 0.75em;
 }
 
-.MainFilmContainer__infoContainer__heart{
+.MainProcedureContainer__infoContainer__heart{
     position: absolute;
     top: 15px;
     right: 15px;
@@ -62,7 +62,7 @@
 .notFilledHeart:hover{
     color: #eb3434;
 }
-.MainFilmContainer__overlay{
+.MainProcedureContainer__overlay{
     position: absolute;
     display: flex;
     top: 0;
@@ -77,12 +77,12 @@
     transition: 0.2s;
     opacity: 0;
 }
-.MainFilmContainer__overlay__playIcon{
+.MainProcedureContainer__overlay__playIcon{
     font-size: 2.5em;
     color: var(--text-color__second);
 }
 
-/* .MainFilmContainer__overlay:hover{
+/* .MainProcedureContainer__overlay:hover{
     opacity: 1;
 } */
 
@@ -99,7 +99,7 @@
     .Banner{
         display: none;
     }
-    .FilmListContainer{
+    .ProcedureListContainer{
         justify-items: center;
         gap: 30px;
     }

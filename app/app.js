@@ -4,8 +4,8 @@ const dotenv = require("dotenv");
 
 
 const authRouter = require("./routes/authRoutes");
-const filmRouter = require("./routes/filmRouter");
 const procedureRouter = require("./routes/procedureRouter");
+const reservationRouter = require("./routes/reservationRouter");
 
 dotenv.config();
 
@@ -23,8 +23,8 @@ app.use((req, res, next) => {
 
 
 app.use("/api/v1/auth", authRouter);
-app.use("/api/v1/films", filmRouter);
 app.use("/api/v1/procedures", procedureRouter);
+app.use("/api/v1/reservations", reservationRouter);
 
 
 module.exports = app;

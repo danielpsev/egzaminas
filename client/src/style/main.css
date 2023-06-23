@@ -17,11 +17,7 @@
     --border-color: #1e273d;
     --app-before-background: url('../assets/images/bg.jpeg');
 }
-.light{
-    --body-bg: #F3F3F3;
-    --text-color: #171A20;
-    --box-color: #fff;   
-}
+
 .text-color{
     color: var(--text-color);
 }
@@ -119,24 +115,21 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-default-outline:fo
 .object-fit-cover{
     object-fit: cover;
 }
-/* h1{
 
+.profile-reservations-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 50px;
+    margin-top: 50px;
 }
-h2{
-
+.profile-reservation-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid var(--border-color);
+    padding: 25px;
 }
-h3{
-
-}
-h4{
-
-}
-h5{
-
-}
-h6{
-
-} */
 
 /* scrollbar */
 ::-webkit-scrollbar{

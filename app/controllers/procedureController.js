@@ -4,7 +4,7 @@ const { isValidObjectId } = require("mongoose");
 
 exports.getCategories = async (req, res) => {
   try {
-    let categories = await Procedure.distinct('category')
+    let categories = await Procedure.distinct("category");
 
     res.status(200).json({
       status: "success",
@@ -21,19 +21,15 @@ exports.getCategories = async (req, res) => {
 };
 
 exports.getAllProcedures = async (req, res) => {
-  const {
-    category,
-  } = req.query;
-
+  const { category } = req.query;
 
   try {
     let allProcedures;
-    if(category){
-       allProcedures = await Procedure.find({category: category})
-    }else{
-       allProcedures = await Procedure.find()
+    if (category) {
+      allProcedures = await Procedure.find({ category: category });
+    } else {
+      allProcedures = await Procedure.find();
     }
-
 
     res.status(200).json({
       status: "success",
@@ -73,20 +69,13 @@ exports.getProcedure = async (req, res) => {
 
 exports.addProcedure = async (req, res) => {
   try {
-    const {
-      title,
-      category,
-      duration,
-      imgSrc,
-    } = req.body;
+    const { title, category, duration, imgSrc } = req.body;
     const findProcedure = await Procedure.findOne({ title });
     if (findProcedure) {
-      return res
-        .status(400)
-        .json({
-          status: "error",
-          mess: "Procedūra su tokiu pavadinimu jau egzistuoja",
-        });
+      return res.status(400).json({
+        status: "error",
+        mess: "Procedūra su tokiu pavadinimu jau egzistuoja",
+      });
     }
     const newProcedure = await Procedure.create({
       title,
@@ -101,28 +90,19 @@ exports.addProcedure = async (req, res) => {
   }
 };
 
-
 exports.editProcedure = async (req, res) => {
   try {
     const { id } = req.params;
-    const {
-      title,
-      category,
-      duration,
-      imgSrc,
-    } = req.body;
+    const { title, category, duration, imgSrc } = req.body;
 
     const findProcedure = await Procedure.findOne({ _id: id });
     if (!findProcedure) {
-      return res
-        .status(400)
-        .json({
-          status: "error",
-          mess: "Procedūra nerasta",
-        });
+      return res.status(400).json({
+        status: "error",
+        mess: "Procedūra nerasta",
+      });
     }
     try {
-
       const updated_procedure = await Procedure.findOneAndUpdate(
         {
           _id: id,
@@ -147,7 +127,6 @@ exports.editProcedure = async (req, res) => {
   }
 };
 
-
 exports.deleteProcedure = async (req, res) => {
   try {
     const { id } = req.params;
@@ -158,11 +137,6 @@ exports.deleteProcedure = async (req, res) => {
         .json({ status: "error", mess: `Procedūra nr: ${id} neegzistuoja` });
     } else {
       try {
-        // await User.updateMany(
-        //   { "likes.film": id },
-        //   { $pull: { likes: { film: id } } }
-        // );
-
         await Procedure.findByIdAndDelete(id);
         res.status(200).json({
           status: "success",

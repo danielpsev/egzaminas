@@ -57,7 +57,7 @@ const Filters = (props) => {
           onChange={handleFilterValChange}
           value={categoryName}
         >
-          <option value="">Rūšiuoti pagal</option>
+          <option value="">Kategorija</option>
           {categories_render}
         </select>
       </form>

@@ -30,8 +30,11 @@
     transition: opacity 0.3s ease;
     z-index: -1;
   } */
-  .dateInput{
-    width: 100%;
+  .regDateForm{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 200px;
   }
   .ProcedureContainer{
     display: flex;

@@ -9,90 +9,90 @@
     /* margin: 15px auto -45px auto; */
 }
 .NavContainer,
-.addFilmInner{
+.addProcedureInner{
     max-width: 500px;
     border-radius: 5px;
 }
-.addFilmInner{
+.addProcedureInner{
     margin: 15px auto;
     background-color: var(--box-color);
     padding: 20px;
     border: 1px solid var(--border-color);
 }
-.FilmsListInner{
+.ProceduresListInner{
     margin-top: 15px;
     overflow: scroll;
 }
-.addFilmContainer{
+.addProcedureContainer{
     margin-top: 25px;
     margin-bottom: 50px;
 }
-.addFilmContent{
+.addProcedureContent{
     display: grid;
     justify-content: center;
 }
-.addFilm__title{
+.addProcedure__title{
     font-size: 1.2em;
 }
-.addFilm__step{
+.addProcedure__step{
     font-size: 1em;
     margin-top: 15px;
 }
-.addFilm__title,
-.addFilm__step{
+.addProcedure__title,
+.addProcedure__step{
     text-align: center;
 }
-.addFilmForm{
+.addProcedureForm{
     margin-top: 15px;
     margin-bottom: 15px;
 }
-.addFilmForm input,
-.addFilmForm textarea{
+.addProcedureForm input,
+.addProcedureForm textarea{
     width: 350px;
 }
-.editFilmForm input,
-.editFilmForm textarea{
+.editProcedureForm input,
+.editProcedureForm textarea{
     width: 100%;
 }
-.addFilmForm input,
-.addFilmForm textarea,
-.editFilmForm input,
-.editFilmForm textarea{
+.addProcedureForm input,
+.addProcedureForm textarea,
+.editProcedureForm input,
+.editProcedureForm textarea{
     display: block;
     margin-top: 10px;
     background-color: rgba(0, 0, 0, 0.2);
     border: 1px solid var(--border-color);
 }
-.addFilmForm label,
-.editFilmForm label{
+.addProcedureForm label,
+.editProcedureForm label{
     display: block;
     margin-top: 15px;
     font-weight: 600;
 }
-.addFilmForm .addFilmBtn,
-.editFilmForm .editFilmSaveBtn{
+.addProcedureForm .addProcedureBtn,
+.editProcedureForm .editProcedureSaveBtn{
     margin-top: 20px;
 }
-.editFilmForm .editFilmSaveBtn{
+.editProcedureForm .editProcedureSaveBtn{
     width: 200px;
 }
-.addFilmForm .labelWithIcon,
-.editFilmForm .labelWithIcon{
+.addProcedureForm .labelWithIcon,
+.editProcedureForm .labelWithIcon{
     display: flex;
     gap: 5px;
 }
 
 
-.editFilmForm{
+.editProcedureForm{
     margin: 25px auto;
     width: 90%;
 }
-.editFilmTitle{
+.editProcedureTitle{
     font-size: 1.2em;
     text-align: center;
     padding: 20px;
 }
-.editFilmBackBtn{
+.editProcedureBackBtn{
     margin-top: 10px;
     margin: 15px auto;
     display: block;
@@ -102,7 +102,7 @@
 .errorMessBox{
     width: 100%;
 }
-/*AdmFilmsList*/
+/*AdmProceduresList*/
 .tableImg{
     width: 50px;
 }
@@ -116,8 +116,8 @@
 }
 
 @media screen and (max-width: 767px){
-    .addFilmForm input,
-    .addFilmForm textarea{
+    .addProcedureForm input,
+    .addProcedureForm textarea{
         width: 270px;
     }
     .tableImg{

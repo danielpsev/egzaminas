@@ -1,23 +1,10 @@
-import axios from "./axios"
-import { toast } from "react-toastify";
-export const likeFilm = async (id, setState) => {
-        setState(true);
-        try{
-            const res = await axios.post("/films/like/" + id);
-          }catch(err){
-            setState(false);
-            toast.error(err.response.data.mess);
-          }
-}
-export const dislikeFilm = async (id, setState) => {
-    setState(false);
-    try{
-      const res = await axios.delete("/films/like/" + id);
-    }catch(err){
-      setState(true);
-      toast.error(err.response.data.mess);
-    }
-  }
+export const formatDate = (date) => {
+  date = new Date(date);
+  let m = String(date.getMonth() + 1).padStart(2, "0"); // month with leading zero
+  let d = String(date.getDate()).padStart(2, "0"); // day with leading zero
+  let y = date.getFullYear(); // year
+  return `${y}-${m}-${d}`;
+};
 
 export const errMessage = (type, field, value) => {
     let mess = "Klaida";
